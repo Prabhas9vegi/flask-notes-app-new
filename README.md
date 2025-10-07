@@ -5,6 +5,7 @@ Users can **sign up, log in, create, view, and manage their notes** in a simple,
 
 ---
 
+
 Flask-Web-App-Tutorial/
 │   main.py          # Entry point of the app
 │   README.md        # Project documentation
@@ -17,6 +18,7 @@ Flask-Web-App-Tutorial/
     │   views.py     # Notes CRUD operations
     └───templates/   # HTML templates (Jinja2)
     └───static/      # CSS, images, JS
+  
 
 ---
 
