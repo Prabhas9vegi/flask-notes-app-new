@@ -13,3 +13,21 @@ CREATE TABLE note (
     user_id INTEGER NOT NULL,
     FOREIGN KEY (user_id) REFERENCES user (id)
 );
+
+
+
+
+
+
+
+
+
+-- Sample Notes for testing
+INSERT INTO user (email, first_name, password) VALUES
+('test1@example.com','Prabhas','hashedpassword'),
+('test2@example.com','Alice','hashedpassword');
+
+INSERT INTO note (data, user_id) VALUES
+('My first note',1),
+('Another note',2),
+('Yet another note',1);
