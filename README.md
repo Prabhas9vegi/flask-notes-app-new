@@ -1,24 +1,29 @@
 # Flask Notes App 📝
 
-A personal notes web application built with **Flask** and **SQLite**, designed for learning, productivity, and project demonstration.  
+A personal notes web application built with **Flask** and **PostgreSQL (Render Database)**, designed for learning, productivity, and project demonstration.  
 Users can **sign up, log in, create, view, and manage their notes** in a simple, responsive interface.
+
+---
+
+## 🌐 Deployed Application
+🚀 **Live URL:** [https://flask-notes-app-19q9.onrender.com/](https://flask-notes-app-19q9.onrender.com/)
 
 ---
 
 ## Project Structure
 Flask-Web-App-Tutorial/
-│   main.py          # Entry point of the app
-│   README.md        # Project documentation
-│   requirements.txt # Python dependencies
-│
-└───website/
-    │   __init__.py  # Flask app initialization
-    │   auth.py      # User authentication routes
-    │   models.py    # Database models (User, Note)
-    │   views.py     # Notes CRUD operations
-    └───templates/   # HTML templates (Jinja2)
-    └───static/      # CSS, images, JS
-  
+│   main.py          # Entry point of the app  
+│   README.md        # Project documentation  
+│   requirements.txt # Python dependencies  
+│  
+└───website/  
+    │   __init__.py  # Flask app initialization  
+    │   auth.py      # User authentication routes  
+    │   models.py    # Database models (User, Note)  
+    │   views.py     # Notes CRUD operations  
+    └───templates/   # HTML templates (Jinja2)  
+    └───static/      # CSS, images, JS  
+
 ---
 
 ## Table of Contents
@@ -36,7 +41,7 @@ Flask-Web-App-Tutorial/
 - User Authentication (Sign Up / Login / Logout) 🔒  
 - Add, view, and manage personal notes ✍️  
 - Secure password hashing using Werkzeug  
-- SQLite database to store users and notes 💾  
+- **PostgreSQL database hosted on Render** 💾  
 - Responsive UI built with HTML, CSS, and Bootstrap  
 
 ---
@@ -44,29 +49,28 @@ Flask-Web-App-Tutorial/
 ## Functionality
 ### **1. User Authentication**
 - **Sign Up:** Users provide email, name, and password.  
-  - Passwords are hashed using secure algorithms before saving to the database.  
-  - Validation ensures emails are unique.
-- **Login:** Users can log in with their registered credentials.  
-  - Session management ensures users stay logged in across pages.
-- **Logout:** Clears user session and redirects to login page.
+  - Passwords are hashed securely before saving to the database.  
+  - Validation ensures unique emails.  
+- **Login:** Users can log in with registered credentials.  
+  - Sessions maintain login state across pages.  
+- **Logout:** Clears session and redirects to login page.
 
 ### **2. Notes Management**
-- **Create Note:** Logged-in users can create new notes with a title and content.  
-- **View Notes:** Users can see all their notes in a list or dashboard.  
-- **Edit/Delete Note:** Users can update or delete their own notes.  
-  - Only the owner of the note can perform these actions for security.
+- **Create Note:** Logged-in users can create notes with title and content.  
+- **View Notes:** All notes displayed in a personal dashboard.  
+- **Edit/Delete Note:** Users can modify or remove their own notes only.  
 
 ### **3. Routing & Pages**
-- `/` → Redirects to `/login` if not authenticated.  
-- `/login` → User login page.  
-- `/signup` → New user registration page.  
-- `/dashboard` → User’s notes dashboard after login.  
-- `/add-note` → Page to add a new note.  
-- `/edit-note/<id>` → Edit a specific note.  
-- `/delete-note/<id>` → Delete a specific note.  
+- `/` → Redirects to `/login` if unauthenticated  
+- `/login` → Login page  
+- `/signup` → New user registration  
+- `/dashboard` → User’s notes dashboard  
+- `/add-note` → Add a new note  
+- `/edit-note/<id>` → Edit an existing note  
+- `/delete-note/<id>` → Delete a note  
 
 ### **4. Database**
-- Uses **SQLite** (`database.db`) for storing users and notes.  
+- **Changed from SQLite → PostgreSQL (Render Cloud Database)**  
 - Tables:
   - `User` → id, email, first_name, password  
   - `Note` → id, title, content, owner_id  
@@ -76,27 +80,28 @@ Flask-Web-App-Tutorial/
 ## Tech Stack
 - **Python 3.x** 🐍  
 - **Flask** 🌐  
-- **SQLite** 🗄️  
+- **PostgreSQL (Render)** 🗄️  
 - **HTML / CSS / Bootstrap** 🎨  
-- **Werkzeug Security** 🔒 (for password hashing)
+- **Werkzeug Security** 🔒  
 
 ---
 
-## key-points
-- Passwords are never stored in plaintext — hashed using secure methods.
-- Each user can only access their own notes.
-- Sessions are managed using Flask’s built-in session mechanism.
-- Application is fully modular, making it easy to extend features.
-- Designed for learning Flask and web app development.
+## Key Points
+- Passwords are securely hashed before saving.  
+- Users can only access their own notes.  
+- Modular Flask app for easy scalability.  
+- Deployed on **Render (Cloud Hosting)** with **PostgreSQL database integration**.  
 
 ---
 
-## future-improvements
-- Add search and filter notes by keyword. 🔍
-- Add note categories or tags. 🏷️
-- Implement REST API for external app integration. 🌐
-- Add user profile management (update name, email, password).
-- Deploy on a cloud platform (Heroku / Render / Vercel). ☁️
+## Future Improvements
+- Add search and filter features 🔍  
+- Note categories/tags 🏷️  
+- REST API for external use 🌐  
+- User profile updates  
+- Dark mode toggle 🌙  
+
+---
 
 ## Setup & Configuration
 ### **1. Clone Repository**
